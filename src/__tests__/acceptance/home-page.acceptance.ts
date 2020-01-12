@@ -6,22 +6,22 @@ describe('HomePage', () => {
   let app: Lb4JestApplication;
   let client: Client;
 
-  before('setupApplication', async () => {
+  beforeAll(async () => {
     ({app, client} = await setupApplication());
   });
 
-  after(async () => {
+  afterAll(async () => {
     await app.stop();
   });
 
-  it('exposes a default home page', async () => {
+  test('exposes a default home page', async () => {
     await client
       .get('/')
       .expect(200)
       .expect('Content-Type', /text\/html/);
   });
 
-  it('exposes self-hosted explorer', async () => {
+  test('exposes self-hosted explorer', async () => {
     await client
       .get('/explorer/')
       .expect(200)
