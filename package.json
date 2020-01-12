@@ -26,7 +26,7 @@
     "posttest": "npm run lint",
     "test:dev": "lb-mocha --allow-console-logs dist/__tests__/**/*.js && npm run posttest",
     "ut": "jest \"src/__tests__/unit\" --coverage",
-    "ut:ci": "npm run ut -- --coverageReporters=text-lcov --ci",
+    "ci": "jest \"src/__tests__/unit\" --coverage --ci",
     "docker:build": "docker build -t lb4-jest .",
     "docker:run": "docker run -p 3000:3000 -d lb4-jest",
     "migrate": "node ./dist/migrate",
