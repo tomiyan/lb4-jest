@@ -18,8 +18,11 @@ jobs:
         run: npm run lint
       - name: Run eslint
         run: npm run eslint
-      - uses: paambaati/codeclimate-action@v2.3.0
+      - uses: paambaati/codeclimate-action@v2.4.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           coverageCommand: npm run ut:ci
+          debug: true
+          coverageLocations:
+            - ./coverage/lcov.info:lcov
