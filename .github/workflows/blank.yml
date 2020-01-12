@@ -24,5 +24,4 @@ jobs:
         with:
           coverageCommand: npm run ut:ci
           debug: true
-          coverageLocations:
-            - ./coverage/lcov.info:lcov
+          coverageLocations: ['./coverage/lcov.info:lcov']
